@@ -14,7 +14,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/widget.tsx"),
       name: "ReactWidget",
-      fileName: "react-widget-crm",
+      fileName: "react-widget-nicole",
       formats: ["iife"],
     },
     rollupOptions: {
