@@ -43,4 +43,4 @@ class ReactWidget extends HTMLElement {
   }
 }
 
-customElements.define("react-widget-nicola", ReactWidget);
+customElements.define("react-widget-nicole", ReactWidget);
