@@ -8,6 +8,10 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   const handleClickOutside = (event: MouseEvent) => {
     if (
       isMobileMenuOpen &&
@@ -32,7 +36,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className="relative w-full bg-gradient-to-br from-black via-[#001a33] to-[#003366] border-b border-white/10 z-[1000] overflow-visible"
+      className="relative w-full bg-gradient-to-br from-black via-[#001a33] to-[#003366] border-b border-white/10 z-[1000] overflow-hidden"
       id="header"
     >
       {/* Background Effects */}
@@ -128,9 +132,21 @@ const Header: React.FC = () => {
         <div
           ref={mobileMenuRef}
           id="mobileMenu"
-          className={`lg:hidden fixed top-0 left-0 right-0 bg-gradient-to-br from-black/95 via-[#001a33]/95 to-[#003366]/95 backdrop-blur-2xl border-t border-white/10 py-8 px-4 transition-all duration-400 z-[10000] min-h-screen ${isMobileMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'}`}
+          className={`lg:hidden fixed top-0 left-0 w-full bg-gradient-to-br from-black/95 via-[#001a33]/95 to-[#003366]/95 backdrop-blur-2xl border-t border-white/10 py-8 px-4 transition-all duration-400 z-[10000] min-h-screen ${isMobileMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'}`}
         >
-          <div className="flex flex-col gap-5 mb-8 mt-16">
+          {/* Cross Button */}
+          <button
+            className="absolute top-4 right-4 p-2 rounded-lg hover:bg-white/10 transition-all duration-300"
+            onClick={closeMobileMenu}
+            aria-label="Close mobile menu"
+          >
+            <div className="relative w-6 h-6">
+              <div className="absolute w-6 h-0.5 bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded rotate-45 top-1/2 -translate-y-1/2"></div>
+              <div className="absolute w-6 h-0.5 bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded -rotate-45 top-1/2 -translate-y-1/2"></div>
+            </div>
+          </button>
+
+          <div className="flex flex-col gap-5 mb-8 mt-16 max-w-md mx-auto">
             {['Features', 'Pricing', 'Solutions', 'Results'].map((item, index) => (
               <a
                 key={item}
@@ -144,10 +160,10 @@ const Header: React.FC = () => {
               </a>
             ))}
           </div>
-          <div className="flex flex-col gap-4 items-center">
+          <div className="flex flex-col gap-4 items-center max-w-md mx-auto">
             <a
               href="#custom-code-hyHEAdqwag"
-              className="inline-flex items-center justify-center gap-1 w-full max-w-xs px-8 py-4 text-base font-bold text-white bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:scale-102 transition-all duration-300 relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-1 w-full px-8 py-4 text-base font-bold text-white bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:scale-102 transition-all duration-300 relative overflow-hidden group"
               onClick={handleNavClick}
             >
               <span className="text-lg">🚀</span>
@@ -156,7 +172,7 @@ const Header: React.FC = () => {
             </a>
             <a
               href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-07"
-              className="inline-flex items-center justify-center gap-1 w-full max-w-xs px-8 py-4 text-base font-bold text-white bg-white/5 backdrop-blur-lg border-2 border-[#0066ff]/30 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:scale-102 hover:bg-white/10 transition-all duration-300 relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-1 w-full px-8 py-4 text-base font-bold text-white bg-white/5 backdrop-blur-lg border-2 border-[#0066ff]/30 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:scale-102 hover:bg-white/10 transition-all duration-300 relative overflow-hidden group"
               onClick={handleNavClick}
             >
               <span className="text-lg">📅</span>
@@ -240,6 +256,10 @@ const Header: React.FC = () => {
           .header-content {
             padding-left: 1rem;
             padding-right: 1rem;
+          }
+          #mobileMenu {
+            box-sizing: border-box;
+            overflow-x: hidden;
           }
         }
       `}</style>
