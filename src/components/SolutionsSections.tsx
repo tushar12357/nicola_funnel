@@ -51,7 +51,7 @@ const galleryImages = [
 
 const SolutionsSection: React.FC = () => {
   return (
-    <section className="relative py-24 px-5 bg-gradient-to-b from-black via-[#001a33] to-[#002244] overflow-hidden min-h-screen w-screen">
+    <section id="custom-code-ynoR-HM-zV" className="relative py-24 px-5 bg-gradient-to-b from-black via-[#001a33] to-[#002244] overflow-hidden min-h-screen w-screen">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,102,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,102,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px] animate-gridMove"></div>

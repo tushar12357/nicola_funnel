@@ -93,7 +93,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-black via-[#001a33] to-black py-24 overflow-hidden">
+    <section  id="custom-code-hyHEAdqwag" className="relative w-full bg-gradient-to-b from-black via-[#001a33] to-black py-24 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(9)].map((_, i) => (

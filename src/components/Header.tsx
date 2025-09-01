@@ -23,8 +23,13 @@ const Header: React.FC = () => {
     }
   };
 
-  const handleNavClick = () => {
-    setIsMobileMenuOpen(false);
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    setIsMobileMenuOpen(false); // Close mobile menu
+    const targetElement = document.querySelector(sectionId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   useEffect(() => {
@@ -86,7 +91,9 @@ const Header: React.FC = () => {
                   ['HR10VoP8sS', 'hyHEAdqwag', 'ynoR-HM-zV', 'GBrzXC7JBw'][index]
                 }`}
                 className="relative text-white text-sm lg:text-base font-semibold px-3 py-2 rounded-xl hover:text-[#00ccff] hover:bg-[#0066ff]/10 hover:-translate-y-0.5 transition-all duration-300 group"
-                onClick={handleNavClick}
+                onClick={(e) => handleNavClick(e, `#custom-code-${
+                  ['HR10VoP8sS', 'hyHEAdqwag', 'ynoR-HM-zV', 'GBrzXC7JBw'][index]
+                }`)}
               >
                 {item}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#0066ff] to-[#00ccff] transition-all duration-300 group-hover:w-4/5"></span>
@@ -99,7 +106,7 @@ const Header: React.FC = () => {
             <a
               href="#custom-code-hyHEAdqwag"
               className="inline-flex items-center gap-1 px-3 py-2 text-sm font-bold text-white bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:scale-102 transition-all duration-300 relative overflow-hidden group"
-              onClick={handleNavClick}
+              onClick={(e) => handleNavClick(e, '#custom-code-hyHEAdqwag')}
             >
               <span className="text-base">🚀</span>
               Start Your Free Trial
@@ -151,10 +158,12 @@ const Header: React.FC = () => {
               <a
                 key={item}
                 href={`#custom-code-${
-                  ['HR10VoP8sS', 'hyHEAdqwag', 'ynoR-HM-zV', 'nT8V8pVsaP'][index]
+                  ['HR10VoP8sS', 'hyHEAdqwag', 'ynoR-HM-zV', 'GBrzXC7JBw'][index]
                 }`}
                 className="text-white text-lg font-semibold text-center py-4 px-5 rounded-xl bg-white/5 backdrop-blur-lg border border-[#0066ff]/20 hover:bg-[#0066ff]/10 hover:border-[#0066ff]/40 hover:text-[#00ccff] transition-all duration-300"
-                onClick={handleNavClick}
+                onClick={(e) => handleNavClick(e, `#custom-code-${
+                  ['HR10VoP8sS', 'hyHEAdqwag', 'ynoR-HM-zV', 'GBrzXC7JBw'][index]
+                }`)}
               >
                 {item}
               </a>
@@ -164,7 +173,7 @@ const Header: React.FC = () => {
             <a
               href="#custom-code-hyHEAdqwag"
               className="inline-flex items-center justify-center gap-1 w-full px-8 py-4 text-base font-bold text-white bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:scale-102 transition-all duration-300 relative overflow-hidden group"
-              onClick={handleNavClick}
+              onClick={(e) => handleNavClick(e, '#custom-code-hyHEAdqwag')}
             >
               <span className="text-lg">🚀</span>
               Start Your Free Trial

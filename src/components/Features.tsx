@@ -40,7 +40,7 @@ const Features = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-gradient-to-br from-black via-[#001a33] to-[#003366] py-20 overflow-hidden">
+    <section id="custom-code-HR10VoP8sS" className="relative w-full bg-gradient-to-br from-black via-[#001a33] to-[#003366] py-20 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div
