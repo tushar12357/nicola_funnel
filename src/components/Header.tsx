@@ -19,13 +19,13 @@ const Header: React.FC = () => {
       !mobileMenuRef.current.contains(event.target as Node) &&
       !(event.target as HTMLElement).closest('.mobile-menu-toggle')
     ) {
-      setIsMobileMenuOpen(false);
+      closeMobileMenu();
     }
   };
 
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    event.preventDefault(); // Prevent default anchor behavior
-    setIsMobileMenuOpen(false); // Close mobile menu
+    event.preventDefault();
+    setIsMobileMenuOpen(false);
     const targetElement = document.querySelector(sectionId);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -33,9 +33,9 @@ const Header: React.FC = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isMobileMenuOpen]);
 
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
             <a
               href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-07"
               className="inline-flex items-center gap-1 px-3 py-2 text-sm font-bold text-white bg-white/5 backdrop-blur-lg border-2 border-[#0066ff]/30 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:scale-102 hover:bg-white/10 transition-all duration-300 relative overflow-hidden group"
-              onClick={handleNavClick}
+              onClick={(e) => handleNavClick(e, '#custom-code-hyHEAdqwag')}
             >
               <span className="text-base">📅</span>
               Book a Free Demo
@@ -139,10 +139,10 @@ const Header: React.FC = () => {
         <div
           ref={mobileMenuRef}
           id="mobileMenu"
-          className={`lg:hidden fixed top-0 left-0 w-full bg-gradient-to-br from-black/95 via-[#001a33]/95 to-[#003366]/95 backdrop-blur-2xl border-t border-white/10 py-8 px-4 transition-all duration-400 z-[10000] min-h-screen ${isMobileMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'}`}
+          className={`lg:hidden fixed top-[68px] left-0 w-full bg-gradient-to-br from-black/95 via-[#001a33]/95 to-[#003366]/95 backdrop-blur-lg border-t border-white/10 py-8 px-4 transition-all duration-300 ease-in-out z-[9999] ${isMobileMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'}`}
         >
           {/* Cross Button */}
-          <button
+          {/* <button
             className="absolute top-4 right-4 p-2 rounded-lg hover:bg-white/10 transition-all duration-300"
             onClick={closeMobileMenu}
             aria-label="Close mobile menu"
@@ -151,7 +151,7 @@ const Header: React.FC = () => {
               <div className="absolute w-6 h-0.5 bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded rotate-45 top-1/2 -translate-y-1/2"></div>
               <div className="absolute w-6 h-0.5 bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded -rotate-45 top-1/2 -translate-y-1/2"></div>
             </div>
-          </button>
+          </button> */}
 
           <div className="flex flex-col gap-5 mb-8 mt-16 max-w-md mx-auto">
             {['Features', 'Pricing', 'Solutions', 'Results'].map((item, index) => (
@@ -182,96 +182,16 @@ const Header: React.FC = () => {
             <a
               href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-07"
               className="inline-flex items-center justify-center gap-1 w-full px-8 py-4 text-base font-bold text-white bg-white/5 backdrop-blur-lg border-2 border-[#0066ff]/30 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:scale-102 hover:bg-white/10 transition-all duration-300 relative overflow-hidden group"
-              onClick={handleNavClick}
+              onClick={(e) => handleNavClick(e, '#custom-code-hyHEAdqwag')}
             >
               <span className="text-lg">📅</span>
               Book a Free Demo
-              <span className="absolute inset-[-2px] rounded-full bg-gradient-to-br from-[#0066ff] via-[#00ccff] via-[#00ff88] via-[#ffd93d] to-[#ff6b6b] opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor' }}></span>
+              <span className="absolute inset-[-2px] rounded-full bg-gradient-to-br from-[#0066ff] via-[#00ccff]  to-[#ff6b6b] opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor' }}></span>
             </a>
           </div>
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes headerDrift {
-          to {
-            transform: translate(30px, 30px);
-          }
-        }
-        @keyframes particleDrift {
-          0%, 100% {
-            transform: translateY(0) translateX(0);
-            opacity: 0.4;
-          }
-          25% {
-            transform: translateY(-15px) translateX(10px);
-            opacity: 0.8;
-          }
-          50% {
-            transform: translateY(-30px) translateX(-5px);
-            opacity: 0.4;
-          }
-          75% {
-            transform: translateY(-15px) translateX(15px);
-            opacity: 0.8;
-          }
-        }
-        @keyframes logoSlideIn {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        @keyframes logoShimmer {
-          to {
-            background-position: 200% center;
-          }
-        }
-        @keyframes navSlideIn {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes buttonsSlideIn {
-          from {
-            opacity: 0;
-            transform: translateX(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        @keyframes glowPulse {
-          0%, 100% {
-            opacity: 0.3;
-            transform: translateX(-50%) scaleX(0.5);
-          }
-          50% {
-            opacity: 1;
-            transform: translateX(-50%) scaleX(1.5);
-          }
-        }
-        @media (max-width: 640px) {
-          .header-content {
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-          #mobileMenu {
-            box-sizing: border-box;
-            overflow-x: hidden;
-          }
-        }
-      `}</style>
     </header>
   );
 };
