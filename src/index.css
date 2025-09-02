@@ -428,3 +428,755 @@ html {
             height: calc(100vh - 68px);
           }
         }
+
+
+        @keyframes demoDrift {
+          to {
+            transform: translate(40px, 40px);
+          }
+        }
+        @keyframes demoParticleDrift {
+          0%, 100% {
+            transform: translateY(0) translateX(0);
+            opacity: 0.6;
+          }
+          25% {
+            transform: translateY(-20px) translateX(15px);
+            opacity: 1;
+          }
+          50% {
+            transform: translateY(-40px) translateX(-10px);
+            opacity: 0.6;
+          }
+          75% {
+            transform: translateY(-20px) translateX(20px);
+            opacity: 1;
+          }
+        }
+        @keyframes demoShimmer {
+          to {
+            background-position: 200% center;
+          }
+        }
+        @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes videoSlideIn {
+          from {
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        @keyframes playButtonPulse {
+          0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+          }
+          50% {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.6);
+          }
+        }
+        @keyframes livePulse {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+        }
+        @keyframes shineLoop {
+          0% {
+            left: -100%;
+          }
+          50% {
+            left: 100%;
+          }
+          100% {
+            left: 100%;
+          }
+        }
+        @keyframes borderGlow {
+          0% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        @keyframes glowRotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes arrowBounce {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(5px);
+          }
+        }
+        .playing .play-overlay {
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        @keyframes featuresDrift {
+          to {
+            transform: translate(60px, 60px);
+          }
+        }
+        @keyframes featuresParticleDrift {
+          0%,
+          100% {
+            transform: translateY(0) translateX(0);
+            opacity: 0.5;
+          }
+          25% {
+            transform: translateY(-25px) translateX(20px);
+            opacity: 0.8;
+          }
+          50% {
+            transform: translateY(-50px) translateX(-15px);
+            opacity: 0.5;
+          }
+          75% {
+            transform: translateY(-25px) translateX(25px);
+            opacity: 0.8;
+          }
+        }
+        @keyframes featuresShimmer {
+          to {
+            background-position: 200% center;
+          }
+        }
+        @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes playButtonPulse {
+          0%,
+          100% {
+            transform: scale(1);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+          }
+          50% {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.6);
+          }
+        }
+        @keyframes glowRotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        @media (max-width: 1024px) {
+          .video-container {
+            max-width: 350px;
+          }
+        }
+        @media (max-width: 768px) {
+          .features-section {
+            padding: 60px 0;
+          }
+          .features-container {
+            padding: 0 16px;
+          }
+          .features-headline {
+            margin-bottom: 40px;
+          }
+          .features-table {
+            padding: 30px 20px;
+          }
+          .features-columns {
+            gap: 15px;
+          }
+          .feature-item {
+            padding: 14px 16px;
+            gap: 12px;
+          }
+          .feature-check {
+            width: 20px;
+            height: 20px;
+          }
+          .feature-check::after {
+            font-size: 12px;
+          }
+          .feature-text {
+            font-size: 15px;
+          }
+          .video-container {
+            max-width: 300px;
+          }
+          .play-button {
+            width: 70px;
+            height: 70px;
+          }
+          .play-icon {
+            border-left: 18px solid #000;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+          }
+        }
+        @media (max-width: 480px) {
+          .features-table {
+            padding: 25px 16px;
+          }
+          .feature-item {
+            padding: 12px 14px;
+          }
+          .feature-text {
+            font-size: 14px;
+          }
+          .video-container {
+            max-width: 280px;
+          }
+        }
+        @media (min-width: 1200px) {
+          .features-section {
+            padding: 100px 0;
+          }
+          .features-content {
+            gap: 80px;
+          }
+          .features-table {
+            padding: 50px;
+          }
+          .features-columns {
+            gap: 35px;
+          }
+          .feature-item {
+            padding: 18px 24px;
+          }
+          .feature-text {
+            font-size: 17px;
+          }
+          .video-container {
+            max-width: 450px;
+          }
+          .play-button {
+            width: 90px;
+            height: 90px;
+          }
+          .play-icon {
+            border-left: 22px solid #000;
+            border-top: 14px solid transparent;
+            border-bottom: 14px solid transparent;
+          }
+        }
+
+         @keyframes drift {
+          to {
+            transform: translate(50px, 50px);
+          }
+        }
+        @keyframes float {
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(30px, -30px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+        }
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.5;
+            transform: scale(1.2);
+          }
+        }
+        @keyframes slideInDown {
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes shimmer {
+          to {
+            background-position: 200% center;
+          }
+        }
+        @keyframes shineLoop {
+          0% {
+            left: -100%;
+          }
+          50% {
+            left: 100%;
+          }
+          100% {
+            left: 100%;
+          }
+        }
+        @keyframes arrowBounce {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(5px);
+          }
+        }
+        @keyframes borderGlow {
+          0% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes gridMove {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(100px, 100px);
+          }
+        }
+        @keyframes particleFloat {
+          0%,
+          100% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+          }
+          10%,
+          90% {
+            opacity: 0.6;
+          }
+          50% {
+            transform: translateY(-100px) translateX(50px);
+          }
+        }
+        @keyframes orbFloat {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(30px, -30px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+        }
+        @keyframes badgeShine {
+          to {
+            left: 100%;
+          }
+        }
+        @keyframes iconPulse {
+          0%,
+          100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+        }
+        @keyframes textShimmer {
+          to {
+            background-position: 200% center;
+          }
+        }
+        @keyframes progressFill {
+          to {
+            width: 100%;
+          }
+        }
+        @keyframes progressFillVertical {
+          to {
+            height: 100%;
+          }
+        }
+        @keyframes stepFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes borderRotate {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        @keyframes resultsFadeIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95) translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+        @keyframes revenueTextLoop {
+          0% {
+            background-position: 0% center;
+          }
+          100% {
+            background-position: 200% center;
+          }
+        }
+        @keyframes statGradientLoop {
+          0% {
+            background-position: 0% center;
+          }
+          100% {
+            background-position: 200% center;
+          }
+        }
+        @keyframes statIconPulse {
+          0%,
+          100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+        }
+        @keyframes imageGlowRotate {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        @media (max-width: 1024px) {
+          .demo-content {
+            gap: 50px;
+          }
+          .visual-demo {
+            padding: 60px 40px;
+          }
+          .results-content {
+            gap: 50px;
+          }
+          .results-stats {
+            gap: 24px;
+          }
+        }
+        @media (max-width: 768px) {
+          .hiw-section {
+            padding: 60px 16px;
+          }
+          .hiw-header {
+            margin-bottom: 50px;
+          }
+          .hiw-title {
+            margin-bottom: 16px;
+          }
+          .step-number {
+            width: 80px;
+            height: 80px;
+            font-size: 28px;
+          }
+          .step-icon {
+            width: 32px;
+            height: 32px;
+            font-size: 16px;
+            top: -10px;
+            right: -10px;
+          }
+          .step-title {
+            font-size: 18px;
+            min-height: auto;
+            margin-bottom: 8px;
+          }
+          .step-description {
+            font-size: 14px;
+            max-width: 100%;
+          }
+          .visual-demo {
+            padding: 30px 20px;
+            border-radius: 20px;
+          }
+          .demo-content {
+            gap: 30px;
+          }
+          .stat-item {
+            min-width: 80px;
+          }
+          .hiw-cta-button {
+            padding: 20px 40px;
+            font-size: 16px;
+            max-width: 320px;
+          }
+          .demo-mockup {
+            border-radius: 16px;
+            min-height: 320px;
+          }
+          .mockup-content {
+            padding: 16px;
+          }
+          .results-image-wrapper {
+            min-height: 200px;
+            margin: 12px 0;
+          }
+          .revenue-growth {
+            font-size: 14px;
+          }
+          .results-section {
+            padding: 40px 24px;
+            margin-top: 60px;
+          }
+          .results-stats {
+            gap: 20px;
+          }
+          .stat-box {
+            padding: 20px;
+          }
+          .stat-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+          }
+          .hiw-grid,
+          .particle,
+          .hiw-orb {
+            animation: none;
+            opacity: 0.2;
+          }
+        }
+
+            @keyframes twinkle {
+          0%,
+          100% {
+            opacity: 0;
+            transform: scale(0);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        @keyframes orbDrift {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(50px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-30px, 30px) scale(0.9);
+          }
+        }
+        @keyframes priceFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes greenShine {
+          to {
+            left: 100%;
+          }
+        }
+        @keyframes pricePulse {
+          0%,
+          100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.2);
+          }
+        }
+        @keyframes priceShimmer {
+          to {
+            background-position: 200% center;
+          }
+        }
+        @keyframes borderRotate {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        @keyframes popularPulse {
+          0%,
+          100% {
+            transform: translateX(-50%) scale(1);
+          }
+          50% {
+            transform: translateX(-50%) scale(1.05);
+          }
+        }
+        @keyframes savingsPulse {
+          0%,
+          100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.05);
+          }
+        }
+        @media (max-width: 1200px) {
+          .pricing-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          }
+        }
+        @media (max-width: 768px) {
+          .pricing-section {
+            padding: 60px 15px;
+          }
+          .pricing-header {
+            margin-bottom: 50px;
+          }
+          .pricing-title {
+            font-size: 48px;
+          }
+          .pricing-subtitle {
+            font-size: 18px;
+          }
+          .price-card {
+            padding: 40px 30px;
+          }
+          .current-price {
+            font-size: 50px;
+          }
+          .included-title {
+            font-size: 16px;
+          }
+          .included-item {
+            padding: 10px;
+          }
+          .included-text {
+            font-size: 13px;
+          }
+          .price-cta-button {
+            padding: 15px 30px;
+            font-size: 15px;
+          }
+        }
+        @media (max-width: 480px) {
+          .pricing-section {
+            padding: 40px 10px;
+          }
+          .pricing-header {
+            margin-bottom: 40px;
+          }
+          .pricing-title {
+            font-size: 36px;
+          }
+          .pricing-subtitle {
+            font-size: 16px;
+          }
+          .price-card {
+            padding: 30px 20px;
+          }
+          .current-price {
+            font-size: 40px;
+          }
+          .original-price {
+            font-size: 16px;
+          }
+          .savings-badge {
+            font-size: 11px;
+          }
+          .included-title {
+            font-size: 15px;
+          }
+          .included-item {
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+          }
+          .included-icon {
+            margin-bottom: 5px;
+          }
+          .price-cta-button {
+            font-size: 14px;
+            padding: 12px 20px;
+          }
+          .secure-text {
+            font-size: 11px;
+          }
+        }
