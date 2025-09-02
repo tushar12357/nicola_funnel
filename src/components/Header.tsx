@@ -41,7 +41,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className="relative w-full bg-gradient-to-br from-black via-[#001a33] to-[#003366] border-b border-white/10 z-[1000] overflow-hidden"
+      className="relative w-full bg-gradient-to-br from-black via-[#001a33] to-[#003366] border-b border-white/10 z-[2000] overflow-hidden"
       id="header"
     >
       {/* Background Effects */}
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
       {/* Glow Effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-0.5 bg-gradient-to-r from-transparent via-[#0066ff]/60 to-transparent animate-[glowPulse_3s_ease-in-out_infinite] sm:w-64"></div>
 
-      <div className="relative z-[1000] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-[2000] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-between py-4 sm:py-6 lg:py-8 gap-4 header-content">
           {/* Logo Section */}
           <div className="flex items-center gap-3 animate-[logoSlideIn_0.8s_ease-out]">
@@ -139,21 +139,20 @@ const Header: React.FC = () => {
         <div
           ref={mobileMenuRef}
           id="mobileMenu"
-          className={`lg:hidden fixed top-[68px] left-0 w-full bg-gradient-to-br from-black/95 via-[#001a33]/95 to-[#003366]/95 backdrop-blur-lg border-t border-white/10 py-8 px-4 transition-all duration-300 ease-in-out z-[9999] ${isMobileMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'}`}
+          className={`lg:hidden fixed top-[68px] left-0 w-full bg-gradient-to-br from-black/95 via-[#001a33]/95 to-[#003366]/95 backdrop-blur-lg border-t border-white/10 py-8 px-4 transition-all duration-300 ease-in-out z-[3000] ${isMobileMenuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'}`}
         >
-          {/* Cross Button */}
-          {/* <button
+          {/* Close Button */}
+          <button
             className="absolute top-4 right-4 p-2 rounded-lg hover:bg-white/10 transition-all duration-300"
             onClick={closeMobileMenu}
             aria-label="Close mobile menu"
           >
-            <div className="relative w-6 h-6">
-              <div className="absolute w-6 h-0.5 bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded rotate-45 top-1/2 -translate-y-1/2"></div>
-              <div className="absolute w-6 h-0.5 bg-gradient-to-br from-[#0066ff] to-[#00ccff] rounded -rotate-45 top-1/2 -translate-y-1/2"></div>
-            </div>
-          </button> */}
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
 
-          <div className="flex flex-col gap-5 mb-8 mt-16 max-w-md mx-auto">
+          <div className="flex flex-col gap-5 mb-8 mt-8 max-w-md mx-auto">
             {['Features', 'Pricing', 'Solutions', 'Results'].map((item, index) => (
               <a
                 key={item}
@@ -186,12 +185,11 @@ const Header: React.FC = () => {
             >
               <span className="text-lg">📅</span>
               Book a Free Demo
-              <span className="absolute inset-[-2px] rounded-full bg-gradient-to-br from-[#0066ff] via-[#00ccff]  to-[#ff6b6b] opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor' }}></span>
+              <span className="absolute inset-[-2px] rounded-full bg-gradient-to-br from-[#0066ff] via-[#00ccff] to-[#ff6b6b] opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor' }}></span>
             </a>
           </div>
         </div>
       </div>
-
     </header>
   );
 };
