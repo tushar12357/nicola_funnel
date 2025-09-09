@@ -93,19 +93,19 @@ const Header: React.FC = () => {
                     ]
                   }`}
                   className="relative text-white text-sm lg:text-base font-semibold px-3 py-2 rounded-xl hover:text-[#00ccff] hover:bg-[#0066ff]/10 hover:-translate-y-0.5 transition-all duration-300 group"
-                  onClick={(e) =>
-                    handleNavClick(
-                      e,
-                      `#custom-code-${
-                        [
-                          "HR10VoP8sS",
-                          "hyHEAdqwag",
-                          "ynoR-HM-zV",
-                          "GBrzXC7JBw",
-                        ][index]
-                      }`
-                    )
-                  }
+                  // onClick={(e) =>
+                  //   handleNavClick(
+                  //     e,
+                  //     `#custom-code-${
+                  //       [
+                  //         "HR10VoP8sS",
+                  //         "hyHEAdqwag",
+                  //         "ynoR-HM-zV",
+                  //         "GBrzXC7JBw",
+                  //       ][index]
+                  //     }`
+                  //   )
+                  // }
                 >
                   {item}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#0066ff] to-[#00ccff] transition-all duration-300 group-hover:w-4/5"></span>
