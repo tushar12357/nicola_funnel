@@ -1,3 +1,4 @@
+import { Shield } from 'lucide-react';
 import React from 'react';
 
 const successStats = [
@@ -37,7 +38,7 @@ const RiskFreeSection: React.FC = () => {
         {/* Shield Icon */}
         <div className="mb-10 animate-shieldFadeIn">
           <div className="w-44 h-44 md:w-48 md:h-48 mx-auto bg-gradient-to-br from-[#1a1a2e] to-[#2a2a3e] border-4 border-transparent rounded-full flex items-center justify-center text-6xl md:text-7xl relative shadow-[0_25px_60px_rgba(0,255,136,0.3),0_0_40px_rgba(0,255,136,0.2)] animate-shieldRotate">
-            🛡️
+          <Shield className="w-16 h-16 md:w-20 md:h-20 text-white z-10" />
             <div className="absolute inset-[-8px] bg-gradient-to-br from-[#00ff88] via-[#00cc66] to-[#66ffaa] rounded-full animate-borderRotate [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] [mask-composite:exclude]"></div>
           </div>
         </div>
