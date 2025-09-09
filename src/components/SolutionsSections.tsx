@@ -260,7 +260,7 @@ const SolutionsSection: React.FC = () => {
         <div className="text-center animate-ctaFadeIn">
           <a
             href="https://calendly.com/bestcallerai-support"
-            className="inline-flex items-center gap-3 bg-gradient-to-br from-[#00ff88] to-[#00ccff] text-[#1a237e] text-lg font-bold py-5 px-10 rounded-full cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden shadow-[0_10px_30px_rgba(0,255,136,0.3)] uppercase tracking-wide hover:-translate-y-1 hover:scale-105 hover:shadow-[0_25px_50px_rgba(0,255,136,0.5)] hover:bg-gradient-to-br hover:from-[#00ff88] hover:via-[#00ccff] hover:to-[#0066ff] animate-ctaPulse hover:animate-none"
+            className="inline-flex items-center gap-3 bg-gradient-to-br from-[#00ff88] to-[#00ccff] text-[#1a237e] text-lg font-bold py-5 px-10 rounded-full cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden shadow-[0_10px_30px_rgba(0,255,136,0.3)] uppercase tracking-wide  hover:scale-105 hover:shadow-[0_25px_50px_rgba(0,255,136,0.5)] hover:bg-gradient-to-br hover:from-[#00ff88] hover:via-[#00ccff] hover:to-[#0066ff] "
           >
             <a
               href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-09"
