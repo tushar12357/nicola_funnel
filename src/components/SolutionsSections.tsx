@@ -259,20 +259,18 @@ const SolutionsSection: React.FC = () => {
         {/* Call to Action */}
         <div className="text-center animate-ctaFadeIn">
           <a
-            href="https://calendly.com/bestcallerai-support"
-            className="inline-flex items-center gap-3 bg-gradient-to-br from-[#00ff88] to-[#00ccff] text-[#1a237e] text-lg font-bold py-5 px-10 rounded-full cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden shadow-[0_10px_30px_rgba(0,255,136,0.3)] uppercase tracking-wide  hover:scale-105 hover:shadow-[0_25px_50px_rgba(0,255,136,0.5)] hover:bg-gradient-to-br hover:from-[#00ff88] hover:via-[#00ccff] hover:to-[#0066ff] "
-          >
-            <a
-              href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-09"
+          href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-09"
               target="_blank"
+            className="inline-flex items-center gap-3 bg-gradient-to-br from-[#00ff88] to-[#00ccff] text-[#1a237e] text-lg font-bold py-5 px-10 rounded-full cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden shadow-[0_10px_30px_rgba(0,255,136,0.3)] uppercase tracking-wide"
+          >
+            <span
               className="relative z-10 transition-all duration-300"
             >
               Get Instant Access Now
-            </a>
-            <span className="relative z-10 text-xl font-bold transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-110">
+            </span>
+            <span className="relative z-10 text-xl font-bold transition-transform duration-300">
               →
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.3)] to-transparent transition-[left] duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] left-[-100%] group-hover:left-full"></div>
           </a>
         </div>
       </div>
