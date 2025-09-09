@@ -63,7 +63,8 @@ const CaseStudySection: React.FC = () => {
               <img
                 src={study.src}
                 alt={study.alt}
-                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                style={{ transform: 'scale(0.9)' }} // Zoom out by default
               />
             </div>
           ))}
