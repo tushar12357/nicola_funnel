@@ -25,7 +25,10 @@ const CaseStudySection: React.FC = () => {
   };
 
   return (
-    <section id="custom-code-GBrzXC7JBw" className="relative py-20 px-0 bg-gradient-to-br from-black via-[#001a33] to-[#003366] overflow-hidden">
+    <section id="custom-code-GBrzXC7JBw" 
+    
+      data-ghl-element-id="GBrzXC7JBw"
+    className="relative py-20 px-0 bg-gradient-to-br from-black via-[#001a33] to-[#003366] overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(0,255,136,0.05)_1px,transparent_1px)] bg-[size:40px_40px] animate-caseStudyDrift"></div>

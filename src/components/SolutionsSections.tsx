@@ -110,6 +110,7 @@ const SolutionsSection: React.FC = () => {
   return (
     <section
       id="custom-code-ynoR-HM-zV"
+      data-ghl-element-id="ynoR-HM-zV"
       className="relative py-24 px-5 bg-gradient-to-b from-black via-[#001a33] to-[#002244] overflow-hidden min-h-screen w-screen"
     >
       {/* Animated Background Elements */}
@@ -259,13 +260,11 @@ const SolutionsSection: React.FC = () => {
         {/* Call to Action */}
         <div className="text-center animate-ctaFadeIn">
           <a
-          href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-09"
-              target="_blank"
+            href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-09"
+            target="_blank"
             className="inline-flex items-center gap-3 bg-gradient-to-br from-[#00ff88] to-[#00ccff] text-[#1a237e] text-lg font-bold py-5 px-10 rounded-full cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden shadow-[0_10px_30px_rgba(0,255,136,0.3)] uppercase tracking-wide"
           >
-            <span
-              className="relative z-10 transition-all duration-300"
-            >
+            <span className="relative z-10 transition-all duration-300">
               Get Instant Access Now
             </span>
             <span className="relative z-10 text-xl font-bold transition-transform duration-300">

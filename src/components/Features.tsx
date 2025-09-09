@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 const Features = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -21,11 +21,11 @@ const Features = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
+            entry.target.style.animationPlayState = "running";
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
     if (contentRef.current) {
@@ -40,12 +40,14 @@ const Features = () => {
   }, []);
 
   return (
-    <section id="custom-code-HR10VoP8sS" className="relative w-full bg-gradient-to-br from-black via-[#001a33] to-[#003366] py-20 overflow-hidden">
+    <section
+      id="custom-code-HR10VoP8sS"
+      data-ghl-element-id="HR10VoP8sS"
+      className="relative w-full bg-gradient-to-br from-black via-[#001a33] to-[#003366] py-20 overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
-        <div
-          className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(0,255,136,0.03)_1px,transparent_1px)] bg-[length:60px_60px] animate-[featuresDrift_25s_linear_infinite]"
-        ></div>
+        <div className="absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(0,255,136,0.03)_1px,transparent_1px)] bg-[length:60px_60px] animate-[featuresDrift_25s_linear_infinite]"></div>
       </div>
       {/* Floating Particles */}
       {[...Array(5)].map((_, i) => (
@@ -62,11 +64,9 @@ const Features = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-5">
         {/* Section Headline */}
         <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-16 animate-[slideInUp_0.8s_ease-out]">
-          <span
-            className="bg-gradient-to-br from-[#00ff88] via-[#00ccff] via-[#0066ff] via-[#ffd93d] to-[#ff6b6b] bg-clip-text text-transparent bg-[length:200%_auto] animate-[featuresShimmer_3s_linear_infinite]"
-          >
+          <span className="bg-gradient-to-br from-[#00ff88] via-[#00ccff] via-[#0066ff] via-[#ffd93d] to-[#ff6b6b] bg-clip-text text-transparent bg-[length:200%_auto] animate-[featuresShimmer_3s_linear_infinite]">
             Core Features
-          </span>{' '}
+          </span>{" "}
           of the system
         </h2>
         {/* Features Content */}
@@ -80,12 +80,12 @@ const Features = () => {
               {/* Column 1 */}
               <div className="flex flex-col gap-5">
                 {[
-                  '24/7 AI Voice Agents',
-                  'Automated Appointment Booking',
-                  'Multi-Language Support (200+ Languages)',
-                  'SMS & WhatsApp Integration',
-                  'Real-time Lead Qualification',
-                  'Custom Voice Training',
+                  "24/7 AI Voice Agents",
+                  "Automated Appointment Booking",
+                  "Multi-Language Support (200+ Languages)",
+                  "SMS & WhatsApp Integration",
+                  "Real-time Lead Qualification",
+                  "Custom Voice Training",
                 ].map((text) => (
                   <div
                     key={text}
@@ -104,12 +104,12 @@ const Features = () => {
               {/* Column 2 */}
               <div className="flex flex-col gap-5">
                 {[
-                  'CRM Integration',
-                  'Analytics Dashboard',
-                  'Call Recording & Transcription',
-                  'White-Label Solution',
-                  'Scalable Infrastructure',
-                  '24/7 Technical Support',
+                  "CRM Integration",
+                  "Analytics Dashboard",
+                  "Call Recording & Transcription",
+                  "White-Label Solution",
+                  "Scalable Infrastructure",
+                  "24/7 Technical Support",
                 ].map((text) => (
                   <div
                     key={text}
@@ -132,7 +132,7 @@ const Features = () => {
             <div className="relative w-full max-w-[400px] rounded-[20px] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.4),0_0_40px_rgba(0,255,136,0.2)] bg-gradient-to-br from-[#00ff88]/10 to-[#0066ff]/10 p-2">
               <div
                 className={`relative w-full pt-[177.78%] bg-black rounded-4xl overflow-hidden ${
-                  isVideoPlaying ? 'playing' : ''
+                  isVideoPlaying ? "playing" : ""
                 }`}
                 id="featuresVideoWrapper"
               >
@@ -167,8 +167,6 @@ const Features = () => {
           </div>
         </div>
       </div>
-
-    
     </section>
   );
 };
