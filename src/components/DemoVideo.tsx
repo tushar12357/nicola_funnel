@@ -141,6 +141,7 @@ const DemoVideo = () => {
           </h3>
           <a
             href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-07"
+            target='_blank'
             className="inline-flex items-center gap-2 bg-gradient-to-br from-[#00ff88] to-[#00cc66] text-black px-10 sm:px-12 py-4 sm:py-5 text-lg sm:text-xl font-bold rounded-[50px] shadow-2xl hover:shadow-[0_20px_50px_rgba(0,255,136,0.6),0_0_30px_rgba(0,255,136,0.8)] hover:-translate-y-1 hover:scale-105 hover:bg-gradient-to-br hover:from-[#00ff88] hover:to-[#66ffaa] transition-all duration-300 relative overflow-hidden uppercase tracking-wide border-2 border-transparent group"
           >
             Free Demo

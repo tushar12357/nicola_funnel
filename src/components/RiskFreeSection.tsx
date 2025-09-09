@@ -57,7 +57,7 @@ const RiskFreeSection: React.FC = () => {
           href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-07"
           className="inline-flex items-center gap-3 bg-gradient-to-br from-[#00ff88] to-[#00cc66] text-black text-xl md:text-2xl font-black py-7 px-16 rounded-full transition-all duration-300 shadow-[0_20px_50px_rgba(0,255,136,0.4),0_0_30px_rgba(0,255,136,0.3)] uppercase tracking-wide relative overflow-hidden border-2 border-transparent hover:-translate-y-1.5 hover:scale-105 hover:shadow-[0_30px_70px_rgba(0,255,136,0.6),0_0_50px_rgba(0,255,136,0.8)] hover:bg-gradient-to-br hover:from-[#00ff88] hover:to-[#66ffaa] hover:border-white/30 animate-buttonFadeIn"
         >
-          <span className="relative z-10">Free Trial</span>
+          <a  href="https://calendly.com/bestcallerai-support/30min?back=1&month=2025-09" target='_blank' className="relative z-10 transition-all duration-300">Free Trial</a>
           <span className="relative z-10 text-2xl md:text-3xl animate-iconBounce">🚀</span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-greenShineLoop"></div>
           <div className="absolute inset-[-3px] bg-gradient-to-br from-[#00ff88] via-[#00ccff] to-[#66ffaa] rounded-full opacity-0 hover:opacity-100 animate-buttonGlow z-[-1]"></div>
