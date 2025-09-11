@@ -3,13 +3,13 @@ import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import Pricing from './components/Pricing';
 import Hero from './components/Hero';
-import SolutionsSection from './components/SolutionsSection';
 import CaseStudySection from './components/CaseStudySection';
 import TestimonialsSection from './components/TestimonialsSection';
 import RiskFreeSection from './components/RiskFreeSection';
 import FAQSection from './components/FAQSection';
 import FooterSection from './components/FooterSection';
 import DemoVideo from './components/DemoVideo';
+import SolutionsSection from './components/SolutionsSections';
 
 function Home({ focusedSection, onNavigate }) {
   const sections = [
