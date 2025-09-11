@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const Header: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
+const Header = ({ onNavigate }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
@@ -12,63 +12,21 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleClickOutside = (event) => {
     if (
       isMobileMenuOpen &&
       mobileMenuRef.current &&
-      !mobileMenuRef.current.contains(event.target as Node) &&
-      !(event.target as HTMLElement).closest(".mobile-menu-toggle")
+      !mobileMenuRef.current.contains(event.target) &&
+      !event.target.closest(".mobile-menu-toggle")
     ) {
       closeMobileMenu();
     }
   };
 
-  const scrollToSection = (sectionId: string, fallbackSelector?: string) => {
-    // Primary selector: exact ID
-    let targetElement = document.querySelector(sectionId) as HTMLElement;
-    
-    // Fallback for GHL: Try common GHL selector patterns (adjust based on your builder inspection)
-    if (!targetElement && fallbackSelector) {
-      // Examples: data-ghl-element-id, or class/id variants
-      targetElement = document.querySelector(fallbackSelector) as HTMLElement;
-    }
-    
-    // Retry once after a short delay for async loading
-    if (!targetElement) {
-      setTimeout(() => {
-        targetElement = document.querySelector(sectionId) as HTMLElement || 
-                        (fallbackSelector ? document.querySelector(fallbackSelector) as HTMLElement : null);
-        if (targetElement) {
-          scrollToElement(targetElement);
-        } else {
-          console.warn(`Target not found: ${sectionId} or ${fallbackSelector}`);
-        }
-      }, 500); // Adjust delay if needed
-      return;
-    }
-    
-    scrollToElement(targetElement);
-  };
-
-  const scrollToElement = (element: HTMLElement) => {
-    const headerHeight = 80; // Approximate fixed header height; measure yours
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerHeight;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  };
-
-  const handleNavClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string,
-    fallbackSelector?: string
-  ) => {
-    event.preventDefault();
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
     setIsMobileMenuOpen(false);
-    scrollToSection(sectionId, fallbackSelector);
+    onNavigate(sectionId);
   };
 
   useEffect(() => {
@@ -78,12 +36,11 @@ const Header: React.FC = () => {
     };
   }, [isMobileMenuOpen]);
 
-  // Define your sections with potential GHL fallbacks (inspect your funnel to customize)
   const sections = [
-    { name: "Features", id: "#custom-code-HR10VoP8sS", fallback: '[data-ghl-element-id="HR10VoP8sS"]' },
-    { name: "Pricing", id: "#custom-code-hyHEAdqwag", fallback: '[data-ghl-element-id="hyHEAdqwag"]' },
-    { name: "Solutions", id: "#custom-code-ynoR-HM-zV", fallback: '[data-ghl-element-id="ynoR-HM-zV"]' },
-    { name: "Results", id: "#custom-code-GBrzXC7JBw", fallback: '[data-ghl-element-id="GBrzXC7JBw"]' },
+    { name: "Features", id: "features" },
+    { name: "Pricing", id: "pricing" },
+    { name: "Solutions", id: "solutions" },
+    { name: "Results", id: "case-study" },
   ];
 
   return (
@@ -127,12 +84,12 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation Menu */}
           <nav className="hidden lg:flex items-center gap-3 animate-[navSlideIn_0.8s_ease-out_0.1s_backwards]">
-            {sections.map((section, index) => (
+            {sections.map((section) => (
               <a
                 key={section.name}
-                href={section.id}
+                href={`#${section.id}`}
                 className="relative text-white text-sm lg:text-base font-semibold px-3 py-2 rounded-xl hover:text-[#00ccff] hover:bg-[#0066ff]/10 hover:-translate-y-0.5 transition-all duration-300 group"
-                onClick={(e) => handleNavClick(e, section.id, section.fallback)}
+                onClick={(e) => handleNavClick(e, section.id)}
               >
                 {section.name}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#0066ff] to-[#00ccff] transition-all duration-300 group-hover:w-4/5"></span>
@@ -236,9 +193,9 @@ const Header: React.FC = () => {
             {sections.map((section) => (
               <a
                 key={section.name}
-                href={section.id}
+                href={`#${section.id}`}
                 className="text-white text-lg font-semibold text-center py-4 px-5 rounded-xl bg-white/5 backdrop-blur-lg border border-[#0066ff]/20 hover:bg-[#0066ff]/10 hover:border-[#0066ff]/40 hover:text-[#00ccff] transition-all duration-300"
-                onClick={(e) => handleNavClick(e, section.id, section.fallback)}
+                onClick={(e) => handleNavClick(e, section.id)}
               >
                 {section.name}
               </a>
